@@ -4,7 +4,7 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function App() {
   const [mode, setMode] = useState("light");
@@ -42,15 +42,21 @@ export default function App() {
   };
 
   return (
-    <Router>
+    <>
+    {/* // <Router> */}
       <Navbar Title="React" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-5">
-        <Routes>
-        <Route exact path="/" element={ <TextForm heading="Text-Utils - Word Counter , Character Counter , Remove Extra Space"  mode={mode}  showAlert={showAlert}  /> }/>
-        <Route exact path="/about" element={<About mode={mode} />} />
-        </Routes>
+        {/* <Routes> */}
+        {/* <Route exact path="/about" element={} /> */}
+        <TextForm heading="Text-Utils - Word Counter , Character Counter , Remove Extra Space"  mode={mode}  showAlert={showAlert}  />
+        {/* <About mode={mode} />       */}
+          {/* <Route exact path="/" element={  }/> */}
+        
+        
+        {/* </Routes> */}
       </div>
-    </Router>
+    {/* </Router> */}
+    </>
   );
 }
